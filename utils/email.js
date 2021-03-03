@@ -15,14 +15,14 @@ exports.sendEmail = async (options) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: process.env.NODEMAILER_EMAIL, // generated ethereal user
-          pass: process.env.NODEMAILER_PASS, // generated ethereal password
+            user: process.env.NODEMAILER_EMAIL, // generated ethereal user
+            pass: process.env.NODEMAILER_PASS, // generated ethereal password
         },
         tls: {
             rejectUnauthorized: false
         }
-      });
-    
+    });
+
     transporter.use('compile', inLineCss());
 
     let info = await transporter.sendMail({
