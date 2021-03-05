@@ -23,7 +23,8 @@ const rootRoute = "/api/v1";
 try {
     mongoose.connect(mongoUrl, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: false
     });
     console.log("Database connected...");
 } catch (error) {
